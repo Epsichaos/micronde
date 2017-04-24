@@ -1,0 +1,40 @@
+<ion-view view-title="Microndes">
+    <ion-content class="padding">
+        <!-- <div class="row row-center center"> -->
+        <div class="row">
+            <div class="col col-50">
+                <label class="item item-input item-stacked-label">
+                    <!--<span class="input-label">New category name</span>-->
+                    <input type="text" ng-model="search" placeholder="Recherche">
+                </label>
+            </div>
+            <div class="col col-75">
+                <button class="button button-energized">
+                    Filtrer les résultats
+                </button disabled>
+            </div>
+        </div>
+            <!--
+        <div class="card">
+
+            <div class="item item-divider bar bar-calm">
+                Access your review
+            </div>
+            <div class="item item-text-wrap">
+                <p>Access the report of your activity and the statistics compute thanks to all the data you've saved in the application.</p>
+                <br>
+                <p class="center"><a ui-sref="review"><button class="button button-energized">Review</button></a></p>
+            </div>
+        </div>
+    -->
+        <div class="list card" ng-repeat="item in collectionList | filter:search">
+            <div class="item item-text-wrap">
+                <div class="row row-center">
+                    <div class="col">
+                        <button class="button button-block button-assertive" ng-click="play({{item.id}})">{{item.soundName}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
